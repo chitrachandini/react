@@ -1,10 +1,20 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 const Display = (props) => {
-    const {displayData} = props;  //const displayData = this.props.displayData
+    const {firstName,lastName,age,strOrNum} = props;
     return(
         <div>
-           {displayData.firstName} {displayData.age}
+           <p>{firstName}</p>
+           <p>{lastName}</p>
+           <p>{age}</p>
+            <p>{strOrNum}</p>
         </div>
     )
+}
+Display.PropTypes = {
+    firstName:PropTypes.string,
+    lastName:PropTypes.string,
+    age:PropTypes.number,
+    strOrNum:PropTypes.oneOfType([PropTypes.number,PropTypes.string])
 }
 export default Display;
